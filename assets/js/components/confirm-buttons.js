@@ -54,5 +54,7 @@ KB.component('confirm-buttons', function (containerElement, options) {
             .build();
 
         containerElement.appendChild(element);
+
+        KB.focus('#modal-confirm-button');
     };
 });

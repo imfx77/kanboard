@@ -58,6 +58,9 @@ Kanboard.App.prototype.datePicker = function() {
         showOtherMonths: true,
         selectOtherMonths: true,
         dateFormat: dateFormat,
+        showWeek: true,
+        weekHeader: "#",
+        firstDay: 1,
         constrainInput: false
     });
 
@@ -66,6 +69,9 @@ Kanboard.App.prototype.datePicker = function() {
         controlType: 'select',
         dateFormat: dateFormat,
         timeFormat: timeFormat,
+        showWeek: true,
+        weekHeader: "#",
+        firstDay: 1,
         constrainInput: false,
         amNames: ['am', 'AM'],
         pmNames: ['pm', 'PM']

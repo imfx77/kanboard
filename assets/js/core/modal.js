@@ -7,6 +7,7 @@
             e.stopPropagation();
             e.preventDefault();
             destroy();
+            KB.trigger('modal.close');
         }
     }
 
@@ -176,7 +177,7 @@
 
             KB.http.get(url).success(function (response) {
                 isOpen = true;
-                create(response, getWidth(size), overlayClickDestroy);
+                    create(response, getWidth(size), overlayClickDestroy);
             });
         },
         close: function () {
