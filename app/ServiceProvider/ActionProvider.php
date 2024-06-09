@@ -51,7 +51,12 @@ use Kanboard\Action\TaskAssignPrioritySwimlane;
 use Kanboard\Action\SubtaskTimerMoveTaskColumn;
 use Kanboard\Action\StopSubtaskTimerMoveTaskColumn;
 use Kanboard\Action\TaskMoveColumnOnStartDate;
+use Kanboard\Action\TaskAssignDueDate;
 use Kanboard\Action\TaskAssignDueDateOnMoveColumn;
+use Kanboard\Action\TaskResetStartDate;
+use Kanboard\Action\TaskResetStartDateOnMoveColumn;
+use Kanboard\Action\TaskResetDueDate;
+use Kanboard\Action\TaskResetDueDateOnMoveColumn;
 
 
 /**
@@ -118,8 +123,13 @@ class ActionProvider implements ServiceProviderInterface
         $container['actionManager']->register(new StopSubtaskTimerMoveTaskColumn($container));
         $container['actionManager']->register(new TaskMoveColumnOnStartDate($container));
         $container['actionManager']->register(new TaskAssignColorOnStartDate($container));
+        $container['actionManager']->register(new TaskAssignDueDate($container));
         $container['actionManager']->register(new TaskAssignDueDateOnMoveColumn($container));
-        
+        $container['actionManager']->register(new TaskResetStartDate($container));
+        $container['actionManager']->register(new TaskResetStartDateOnMoveColumn($container));
+        $container['actionManager']->register(new TaskResetDueDate($container));
+        $container['actionManager']->register(new TaskResetDueDateOnMoveColumn($container));
+
         return $container;
     }
 }
